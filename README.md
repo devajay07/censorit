@@ -2,6 +2,15 @@
 
 CensorIt is an open-source image censorship tool that allows users to easily censor their photos by applying various techniques. The main focus of this project is simplicity, ease of use, privacy, and being completely ad-free.
 
+# what is a image censor tool:
+
+A tool to selectany part of an image and censor it.
+**See demo-->** pic1: before censoring
+pic2:after censoring eye portion.
+
+![pic1](./example-images/normal-image.png)
+![pic2](./example-images/censored.png)
+
 ## Features
 
 - **User-friendly Interface**
@@ -15,7 +24,7 @@ CensorIt is an open-source image censorship tool that allows users to easily cen
 
 ## Usage
 
-1. Visit the website: [https://censorit.io](https://censorit.io)
+1. Visit the website: [https://censorit.io](https://censorit.io) (Not in function yet)
 2. Upload the image you want to censor.
 3. Choose the censorship technique of your preference.
 4. Click "Censor" to process the image.
@@ -40,4 +49,4 @@ CensorIt is licensed under the [MIT License](LICENSE.md). You are free to use, m
 
 ---
 
-CensorIt is a project developed with dedication by [YourName](https://github.com/yourusername). We hope it proves to be a valuable tool for image censorship needs. If you have any questions or feedback, feel free to reach out to us. Let's censor responsibly!
+CensorIt is a project developed with dedication by..... We hope it proves to be a valuable tool for image censorship needs. If you have any questions or feedback, feel free to reach out to us. Let's censor responsibly!
