@@ -11,6 +11,7 @@ function Home() {
         }
       };
       const handleCensorClick = () => {
+        if(inpImage)
         setSpin(true); 
       };
   return (
@@ -33,7 +34,7 @@ function Home() {
             </div>
             <div className="progress">
             {( inpImage && spin && !outImage) && <div className="spinner"></div>}
-            <button className='button'onClick={handleCensorClick}
+            <button className='button' onClick={handleCensorClick}
                 >CensorIt</button>
             </div>
             <div className="output">
