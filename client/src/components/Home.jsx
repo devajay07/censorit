@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from "axios"
 
 function Home() {
     const [inpImage , setInpImage] = useState();
@@ -11,8 +12,30 @@ function Home() {
         }
       };
       const handleCensorClick = () => {
-        if(inpImage)
-        setSpin(true); 
+        if (!inpImage || spin) {
+          return;
+        }
+
+        setSpin(true);
+        const formData = new FormData();
+        formData.append("photo", inpImage);
+
+        axios
+          .post("http://localhost:3000/blur-photo", formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+            responseType: "arraybuffer", // Tell Axios to treat the response as an ArrayBuffer
+          })
+          .then((response) => {
+            const blob = new Blob([response.data], { type: "image/jpeg" });
+            setOutImage(blob);
+            setSpin(false);
+          })
+          .catch((error) => {
+            console.error(error);
+            setSpin(false);
+          });
       };
   return (
     <div className='home'>
@@ -39,7 +62,7 @@ function Home() {
             </div>
             <div className="output">
                 {!outImage ? <><p>1. click on Upload Image</p>
-                <p>2. click on button CensorIt</p></> : <img src={URL.createObjectURL(inpImage) }alt="uploaded" className='outImage'/> }
+                <p>2. click on button CensorIt</p></> : <img src={URL.createObjectURL(outImage) }alt="uploaded" className='outImage'/> }
             </div>
 
         </div>
